@@ -20,3 +20,23 @@ export const Container = styled.div`
     padding: 0 30px;
   }
 `
+export const Button = styled.button<{ primary: boolean, big: boolean, fontBig: boolean }>`
+  border-radius: 4px;
+  background: ${({primary}) => primary ? '#4B59F7' : '#0467FB'};
+  white-space: nowrap;
+  padding: ${({big}) => (big ? '12px 64px' : '10px 20px')};
+  font-size: ${({fontBig}) => (fontBig ? '20px' : '40px')};
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    transition: all 0.3s ease-out;
+    background: #fff;
+    background: ${({primary}) => primary ? '#4B59F7' : '#0467FB'};
+  }
+
+  @media screen and  (max-width: 960px) {
+    width: 100%;
+  }
+`
